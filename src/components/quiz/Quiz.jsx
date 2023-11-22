@@ -1,4 +1,3 @@
-// Quiz.js
 import React, { useState } from 'react';
 import QuizHeader from './QuizHeader';
 import QuizQuestion from './QuizQuestion';
@@ -9,59 +8,75 @@ import './quiz.scss';
 const Quiz = () => {
   const [currentQuiz, setCurrentQuiz] = useState(0);
   const [score, setScore] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [selectedAnswers, setSelectedAnswers] = useState(
+    Array(quizData.length).fill(null)
+  );
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
-  const handleAnswerSubmit = () => {
-    const currentQuizData = quizData[currentQuiz];
-  
-    console.log('Selected Answer:', selectedAnswer);
-    console.log('Correct Answer:', currentQuizData.correct);
-  
-    if (selectedAnswer === currentQuizData.correct) {
+  const handleAnswerSubmit = (selectedAnswer) => {
+    const updatedAnswers = [...selectedAnswers];
+    updatedAnswers[currentQuiz] = selectedAnswer;
+    setSelectedAnswers(updatedAnswers);
+
+    if (selectedAnswer === quizData[currentQuiz].correct) {
       setScore(score + 1);
     }
-  
+
     if (currentQuiz + 1 < quizData.length) {
-      // Set a timeout to reset selectedAnswer after 500 milliseconds
-      setTimeout(() => {
-        setSelectedAnswer(null);
-        setCurrentQuiz(currentQuiz + 1);
-      }, 500);
+      setCurrentQuiz(currentQuiz + 1);
     } else {
-      // If it's the last question, reset immediately
-      setCurrentQuiz(quizData.length);
-      setSelectedAnswer(null);
+      setQuizCompleted(true);
     }
   };
 
   const handleReload = () => {
     setCurrentQuiz(0);
     setScore(0);
+    setSelectedAnswers(Array(quizData.length).fill(null));
+    setQuizCompleted(false);
   };
 
   const currentQuizData = quizData[currentQuiz];
 
   return (
     <div className='quiz-container' id='quiz'>
-      {currentQuiz < quizData.length ? (
+      {quizCompleted ? (
+        <div className='quiz-result'>
+          <h3>
+            {' '}
+            You answered correctly on: <br /> {score} / {quizData.length}{' '}
+            questions{' '}
+          </h3>
+          <h3 className='special'>Details:</h3>
+          <ul>
+            {quizData.map((question, index) => (
+              <li key={index}>
+                Question {index + 1}:{' '}
+                <span
+                  className={`${
+                    selectedAnswers[index] === question.correct
+                      ? 'right'
+                      : 'wrong'
+                  }`}
+                >
+                  {selectedAnswers[index] === question.correct
+                    ? 'Correct'
+                    : 'Wrong'}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <button onClick={handleReload}>Reload</button>
+        </div>
+      ) : (
         <>
           <QuizHeader question={currentQuizData.question} />
           <QuizQuestion
             questionData={currentQuizData}
-            selectedAnswer={selectedAnswer}
-            onAnswerChange={setSelectedAnswer}
+            selectedAnswer={selectedAnswers[currentQuiz]}
             onAnswerSubmit={handleAnswerSubmit}
           />
         </>
-      ) : (
-        <div className='quiz-result'>
-          <h2>
-            {' '}
-            You answered correctly on: <br /> {score} / {quizData.length}{' '}
-            questions{' '}
-          </h2>
-          <button onClick={handleReload}>Reload</button>
-        </div>
       )}
     </div>
   );
