@@ -7,7 +7,7 @@ const QuizChoice = ({ id, label, checked, onChange }) => {
   };
 
   return (
-    <li className='choice'>
+    <li className='choice' data-testid='choice'>
       <input
         type='radio'
         id={id}

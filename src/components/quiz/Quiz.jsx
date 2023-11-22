@@ -39,14 +39,13 @@ const Quiz = () => {
   const currentQuizData = quizData[currentQuiz];
 
   return (
-    <div className='quiz-container' id='quiz'>
+    <div className='quiz-container' id='quiz' data-testid='quiz'>
       {quizCompleted ? (
         <div className='quiz-result'>
-          <h3>
-            {' '}
-            You answered correctly on: <br /> {score} / {quizData.length}{' '}
-            questions{' '}
-          </h3>
+          <h3>You answered correctly on:</h3>
+          <h4>
+            {score} / {quizData.length} questions{' '}
+          </h4>
           <h3 className='special'>Details:</h3>
           <ul>
             {quizData.map((question, index) => (

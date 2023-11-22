@@ -28,3 +28,5 @@ npm run start
 ```sh
 npm run test
 ```
+
+There should be data for this project and I'll give it here to make it easier

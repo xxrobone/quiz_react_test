@@ -7,11 +7,8 @@ const QuizQuestion = ({ questionData, onAnswerSubmit }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   const handleAnswerChange = (value) => {
-    setSelectedAnswer((prevSelectedAnswer) => {
-      console.log('Previous Selected Answer:', prevSelectedAnswer);
-      console.log('New Selected Answer:', value);
-      return value;
-    });
+    console.log('Selected Answer:', value);
+    setSelectedAnswer(value);
   };
 
   const handleSubmit = () => {
@@ -20,7 +17,7 @@ const QuizQuestion = ({ questionData, onAnswerSubmit }) => {
   };
 
   return (
-    <div className='question'>
+    <div className='quiz-question' data-testid='quiz-question'>
       <ul>
         {['a', 'b', 'c', 'd'].map((choiceId) => (
           <QuizChoice

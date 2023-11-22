@@ -1,6 +1,7 @@
 .quiz-container {
   background-color: #282828;
-  width: 500px;
+  width: 100%;
+  max-width: 30rem;
   border-radius: 10px;
   box-shadow: 0 0 10px 1px rgba(100, 100, 100, 0.322),
     0 0 5px rgba(255, 255, 255, 0.856);
