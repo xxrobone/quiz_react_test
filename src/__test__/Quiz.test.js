@@ -1,6 +1,7 @@
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Quiz from '../components/quiz/Quiz';
+import { act } from 'react-dom/test-utils';
 
 test('renders Quiz component that serves as a wrapper', () => {
   render(<Quiz />);
@@ -21,7 +22,9 @@ test('renders Quiz component and shows results after answering questions', async
   const answerA = screen.getByLabelText('Hyper Mouse Lightning');
   userEvent.click(answerA);
 
+act(() => {
   fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+})
 
   const answerB = screen.getByLabelText('Cascading style sheets');
   userEvent.click(answerB);
