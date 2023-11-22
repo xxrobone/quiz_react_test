@@ -17,9 +17,11 @@ const Quiz = () => {
     const updatedAnswers = [...selectedAnswers];
     updatedAnswers[currentQuiz] = selectedAnswer;
     setSelectedAnswers(updatedAnswers);
+    console.log('check selected answer on submit', selectedAnswer);
 
     if (selectedAnswer === quizData[currentQuiz].correct) {
       setScore(score + 1);
+     /*  console.log('true'); */
     }
 
     if (currentQuiz + 1 < quizData.length) {
