@@ -18,17 +18,27 @@ All tests can be found in the /src/__test__ dir
 
 // not ready yet...
 
-### Getting started
+## Available Scripts
+
+In the project directory, you can run:
 
 ```sh
 npm run start
 ```
 
-### How to run test 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
 ```sh
 npm run test
 ```
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
 
 There should be data for this project and I'll give it here to make it easier
 ```
