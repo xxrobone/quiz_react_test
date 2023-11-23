@@ -20,12 +20,13 @@ test('renders QuizQuestion component with choices and handles interaction', () =
   const quizQuestionElement = screen.getByTestId('quiz-question');
   expect(quizQuestionElement).toBeInTheDocument();
 
-  expect(quizQuestionElement).toHaveClass('quiz-question');
-
   Object.values(mockQuestionData).forEach((choice) => {
     const choiceElement = screen.getByText(choice);
     expect(choiceElement).toBeInTheDocument();
   });
+
+  let listitems = screen.getAllByTestId('choice');
+  expect(listitems.length).toBe(4);
 
   fireEvent.click(screen.getByLabelText('Choice A'));
   expect(screen.getByLabelText('Choice A')).toBeChecked();
