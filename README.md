@@ -3,7 +3,7 @@
 ## This is a quiz app, it's built with react using tests 
 
 The functionality is to use mockData, with questions and 4 alternatives / choices to choose from with only one being right and 3 being wrong answers, 
-after the questions have all been submitted show a score and answers for which questions was corrent or wrong
+after the questions have all been submitted show a score and answers for which questions was correct or wrong
 
 It's a basic create-react-app project and I've used basic jsx and sass for styling in this project 
 
