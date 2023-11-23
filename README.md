@@ -2,14 +2,14 @@
 
 ## This is a quiz app, it's built with react using tests 
 
-The functionality is to use mockData, with questions and 4 alternatives / choices to choose from with only one being right and 3 being wrong answers, 
-after the questions have all been submitted show a score and answers for which questions was correct or wrong
+The functionality is to use mockData, with questions and 4 alternatives / choices to choose from with only one being right for the current question, and 3 being wrong answers.
+After the questions have all been submitted show a score and answers for which questions was correct or wrong
 
 It's a basic create-react-app project and I've used basic jsx and sass for styling in this project 
 
 All tests can be found in the /src/__test__ dir
 
-# Components and Features to include
+# Components and Features to include 💾
 - Header (with a title)
 - Quiz component, handles state for currentQuiz, selectedAnswers and score, its is the wrapper for QuizHeader & QuizQuestions, passes the data
     - QuizHeader component is where the question is shown as title, passed in as props from data
@@ -18,29 +18,20 @@ All tests can be found in the /src/__test__ dir
 
 // not ready yet...
 
-## Available Scripts
-
-In the project directory, you can run:
+### Getting started
 
 ```sh
 npm run start
 ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### How to run test 
 
 ```sh
 npm run test
 ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-
-There should be data for this project and I'll give it here to make it easier
+There should be data for this project and I'll give an example here, to make it easier.
+But feel free to use what ever mockData you want. 
 ```
 [
   {
@@ -85,3 +76,5 @@ There should be data for this project and I'll give it here to make it easier
   },
 ]
 ```
+
+Lets go! 😊
