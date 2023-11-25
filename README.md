@@ -97,7 +97,7 @@ There should be data for this project and I'll give it here to make it easier
 
 # PREVIEW
     This is just to help out for the process
-### Survey App 
+### Quiz App 
 <img src="assets/quiz.gif" alt="Project image" width="180">
 
 
