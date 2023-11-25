@@ -77,4 +77,10 @@ But feel free to use what ever mockData you want.
 ]
 ```
 
-Lets go! 😊
+# PREVIEW
+    This is just to help out for the process
+### Survey App 
+<img src="assets/quiz.gif" alt="Project image" width="180">
+
+
+Happy coding 😊
