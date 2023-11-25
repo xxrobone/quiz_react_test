@@ -7,6 +7,9 @@ test('renders Header and Quiz components in App', () => {
   const headerElement = screen.getByTestId('header');
   expect(headerElement).toBeInTheDocument();
 
+  const heading = screen.getByText(/Quiz Game/i);
+  expect(heading).toBeInTheDocument();
+
   const quizElement = screen.getByTestId('quiz');
   expect(quizElement).toBeInTheDocument();
 });
