@@ -2,21 +2,40 @@
 
 ## This is a quiz app, it's built with react using tests 
 
-The functionality is to use mockData, with questions and 4 alternatives / choices to choose from with only one being right for the current question, and 3 being wrong answers.
-After the questions have all been submitted show a score and answers for which questions was correct or wrong
+The functionality is to use mockData, with questions and 4 alternatives / choices to choose from with only one being right and 3 being wrong answers, 
+after the questions have all been submitted show a score and answers for which questions was corrent or wrong
 
 It's a basic create-react-app project and I've used basic jsx and sass for styling in this project 
 
 All tests can be found in the /src/__test__ dir
 
 # Components and Features to include 💾
-- Header (with a title)
-- Quiz component, handles state for currentQuiz, selectedAnswers and score, its is the wrapper for QuizHeader & QuizQuestions, passes the data
-    - QuizHeader component is where the question is shown as title, passed in as props from data
-    - QuizQuestion, handles submit and is a list wrapper for QuizChoices rendering the choices, passed in as props from data
-- QuizChoice component should contain a choice ex, li with input and label, takes in props from data
 
-// not ready yet...
+Components:  
+
+  - App
+      Wraps the entire application should include header and Quiz
+
+  - Header 
+      Header with a title
+
+  - Quiz component
+      Handles state for currentQuiz, selectedAnswers and score
+      Wrapping QuizHeader and QuizQuestions
+      Should also include display of result and have a reload button
+  
+  - QuizHeader 
+      Takes in the current quiz (question)
+  
+  - QuizQuestions 
+      Passes the data to the quiz choice
+      Handles state, and has a submit that should take in the current choice
+      and take user to next question
+
+  - QuizChoice
+      This is where the inputs are for the radio inputs
+      ex, li > with input and label, takes in props from data
+
 
 ### Getting started
 
@@ -30,8 +49,7 @@ npm run start
 npm run test
 ```
 
-There should be data for this project and I'll give an example here, to make it easier.
-But feel free to use what ever mockData you want. 
+There should be data for this project and I'll give it here to make it easier
 ```
 [
   {
