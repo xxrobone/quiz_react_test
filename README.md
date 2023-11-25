@@ -13,26 +13,26 @@ All tests can be found in the /src/__test__ dir
 
 Components:  
 
-  - App
+  - App <br/>
       Wraps the entire application should include header and Quiz
 
-  - Header 
+  - Header <br/>
       Header with a title
 
-  - Quiz component
+  - Quiz component <br/>
       Handles state for currentQuiz, selectedAnswers and score
       Wrapping QuizHeader and QuizQuestions
       Should also include display of result and have a reload button
   
-  - QuizHeader 
+  - QuizHeader <br/>
       Takes in the current quiz (question)
   
-  - QuizQuestions 
+  - QuizQuestions <br/>
       Passes the data to the quiz choice
       Handles state, and has a submit that should take in the current choice
       and take user to next question
 
-  - QuizChoice
+  - QuizChoice <br/>
       This is where the inputs are for the radio inputs
       ex, li > with input and label, takes in props from data
 
