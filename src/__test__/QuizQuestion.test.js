@@ -26,7 +26,7 @@ test('renders QuizQuestion component with choices and handles interaction', () =
   });
 
   let listitems = screen.getAllByTestId('choice');
-  expect(listitems.length).toBe(4);
+  expect(listitems.length).toBe(4)
 
   fireEvent.click(screen.getByLabelText('Choice A'));
   expect(screen.getByLabelText('Choice A')).toBeChecked();
