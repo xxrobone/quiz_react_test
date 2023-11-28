@@ -19,6 +19,9 @@ Components:
   - Header <br/>
       Header with a title
 
+  - Footer <br/>
+      Footer should include an copyright symbol
+
   - Quiz component <br/>
       Handles state for currentQuiz, selectedAnswers and score
       Wrapping QuizHeader and QuizQuestions
@@ -47,6 +50,12 @@ npm run start
 
 ```sh
 npm run test
+```
+
+### How to run ALL test 
+
+```sh
+npm run test --watchAll
 ```
 
 There should be data for this project and I'll give it here to make it easier
@@ -101,6 +110,9 @@ There should be data for this project and I'll give it here to make it easier
   <br/>
 ### Quiz App 
 <img src="assets/quiz.gif" alt="Project image" width="180">
+
+# HEADs UP
+When running the tests, it wont
 
 
 Happy coding 😊

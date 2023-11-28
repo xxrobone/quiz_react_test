@@ -188,3 +188,46 @@ describe('User triggered events, Shows results after answering questions', () =>
     expect(resultText).toBeInTheDocument();
   });
 });
+
+describe('User triggered events, Shows results after answering all questions wrong', () => {
+  test('User no question right, check that it renders the right result', async () => {
+    render(<Quiz />);
+
+    const answer1 = screen.getByLabelText('Hyper Mouse Lightning');
+    userEvent.click(answer1);
+
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+
+    const answer2 = screen.getByLabelText('Cool sassy style');
+    userEvent.click(answer2);
+
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+
+    const answer3 = screen.getByLabelText('JAVA');
+    userEvent.click(answer3);
+
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+
+    const answer4 = screen.getByLabelText('With the help of vs code');
+    userEvent.click(answer4);
+
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+
+    const answer5 = screen.getByLabelText('2000');
+    userEvent.click(answer5);
+
+    fireEvent.click(screen.getByRole('button', { name: /submit/i }));
+
+    await waitFor(() => {
+      const resultHeadlineElement = screen.queryByText(
+        /You answered correctly on:/i
+      );
+      expect(resultHeadlineElement).toBeInTheDocument();
+    });
+    const resultText = screen.queryByText(/0 out of 5 questions/i);
+    expect(resultText).toBeInTheDocument();
+    
+    let correctAnswer = screen.queryByText('Correct');
+    expect(correctAnswer).not.toBeInTheDocument();
+  });
+});
